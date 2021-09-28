@@ -1,0 +1,16 @@
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100hv;
+  align-items: center;
+  margin: 0 auto;
+  color: white;
+}
+
+canvas {
+  border: 5px solid;
+  border-color: #2ED9EB;
+  
+}

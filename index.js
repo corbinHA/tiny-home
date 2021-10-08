@@ -8,8 +8,28 @@ const apps = [
     'grave'
 ];
 
-let appName = document.getElementById('app-name');
-appName.innerText = apps[0]
+const display = document.getElementById('display');
+const appTitle = document.getElementById('app-name');
+const options = document.getElementById('options');
+
+const cleanUp = () => {
+    display.innerHTML = '';
+}
+
+const setDisplay = () => {
+    let selectedApp = apps[0]
+    appTitle.innerHTML = selectedApp;
+    appTitle.style.color = "#2ED9EB"
+    if (selectedApp === 'art') {
+        cleanUp();
+        generateArt();
+    } else if (selectedApp === 'game') {
+        cleanUp();
+        generateGame();
+    } else {
+        cleanUp();
+    }
+}
 
 const toggleDark = () => {
     document.body.style.backgroundColor = '#000000'
@@ -25,18 +45,34 @@ const toggleLight = () => {
 
 const rotateRight= () => {
     apps.push(apps.shift())
-    appName.innerText = apps[0]
+    // appName.innerText = apps[0]
+    setDisplay();
     apps[0] === 'grave' ? toggleDark() : toggleLight();
-    return apps;
 }
 
 const rotateLeft= () => {
     apps.unshift(apps.pop())
-    appName.innerText = apps[0]
+    // appName.innerText = apps[0]
+    setDisplay();
     apps[0] === 'grave' ? toggleDark() : toggleLight();
-    return apps;
 }
+
+const keyDown = e => {
+        switch(e.keyCode) {
+            case(39):
+                rotateRight()
+                break;
+            case(37):
+                rotateLeft()
+                break;
+        }
+    }
 
 document.getElementById('right-button').onclick = rotateRight;
 document.getElementById('left-button').onclick = rotateLeft;
 
+document.addEventListener('keydown', keyDown);
+
+document.addEventListener('DOMContentLoaded', () => {
+    setDisplay();
+});

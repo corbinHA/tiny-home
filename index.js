@@ -22,11 +22,25 @@ const setDisplay = () => {
     appTitle.style.color = "#2ED9EB"
     if (selectedApp === 'art') {
         cleanUp();
+        appTitle.style.color = "#FF66FF"
+        appTitle.style.fontFamily = "'Fleur De Leah', cursive";
+        appTitle.style.fontSize = "200px"
         generateArt();
     } else if (selectedApp === 'game') {
         cleanUp();
+        appTitle.style.color = "#f73600"
+        appTitle.style.fontFamily = "'Press Start 2P', cursive";
+        appTitle.style.fontSize = "80px"
         generateGame();
+    } else if (selectedApp === 'grave') {
+        cleanUp();
+        appTitle.style.color = "#f00000"
+        appTitle.style.fontWeight = "800"
+        appTitle.style.fontSize = "200px"
+        appTitle.style.fontFamily = "'Amatic SC', cursive";
     } else {
+        appTitle.style.fontFamily = "'Audiowide', 'cursive'";
+        appTitle.style.fontSize = "100px"
         cleanUp();
     }
 }
@@ -45,14 +59,12 @@ const toggleLight = () => {
 
 const rotateRight= () => {
     apps.push(apps.shift())
-    // appName.innerText = apps[0]
     setDisplay();
     apps[0] === 'grave' ? toggleDark() : toggleLight();
 }
 
 const rotateLeft= () => {
     apps.unshift(apps.pop())
-    // appName.innerText = apps[0]
     setDisplay();
     apps[0] === 'grave' ? toggleDark() : toggleLight();
 }

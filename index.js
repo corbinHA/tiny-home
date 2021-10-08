@@ -19,6 +19,7 @@ const cleanUp = () => {
 const setDisplay = () => {
     let selectedApp = apps[0]
     appTitle.innerHTML = selectedApp;
+    appTitle.style.fontSize = "112px"
     appTitle.style.color = "#2ED9EB"
     if (selectedApp === 'art') {
         cleanUp();
@@ -40,7 +41,6 @@ const setDisplay = () => {
         appTitle.style.fontFamily = "'Amatic SC', cursive";
     } else {
         appTitle.style.fontFamily = "'Audiowide', 'cursive'";
-        appTitle.style.fontSize = "100px"
         cleanUp();
     }
 }

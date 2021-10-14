@@ -27,8 +27,9 @@ const render = appName => {
 const setDisplay = () => {
     let selectedApp = appList[0];
     appTitle.innerHTML = selectedApp.name;
-    appTitle.style.fontSize = "112px";
+    appTitle.style.fontSize = selectedApp.fontSize;
     appTitle.style.color = selectedApp.color;
+    appTitle.style.fontFamily = selectedApp.fontFamily
     render(selectedApp.name);
     // if (selectedApp === 'art') {
     //     cleanUp();

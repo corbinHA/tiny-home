@@ -5,8 +5,8 @@ let apps ={
         fontFamily: "'Audiowide', 'cursive'",
         fontSize: "112px",
     },
-    blog: {
-        name: 'blog',
+    math: {
+        name: 'math',
         color: '#2ED9EB',
         fontFamily: "'Audiowide', 'cursive'",
         fontSize: "112px",

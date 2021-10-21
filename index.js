@@ -15,6 +15,8 @@ const render = appName => {
     switch(appName) {
         case('game'):
             return generateGame();
+        case('math'):
+            return generateMath();
         case('note'):
             return generateNote();
         case('art'):
@@ -33,28 +35,6 @@ const setDisplay = () => {
     appTitle.style.color = selectedApp.color;
     appTitle.style.fontFamily = selectedApp.fontFamily
     render(selectedApp.name);
-    // if (selectedApp === 'art') {
-    //     cleanUp();
-    //     appTitle.style.color = "#FF66FF";
-    //     appTitle.style.fontFamily = "'Fleur De Leah', cursive";
-    //     appTitle.style.fontSize = "200px";
-    //     generateArt();
-    // } else if (selectedApp === 'game') {
-    //     cleanUp();
-    //     appTitle.style.color = "#f73600";
-    //     appTitle.style.fontFamily = "'Press Start 2P', cursive";
-    //     appTitle.style.fontSize = "80px";
-    //     generateGame();
-    // } else if (selectedApp === 'grave') {
-    //     cleanUp();
-    //     appTitle.style.color = "#f00000";
-    //     appTitle.style.fontWeight = "800";
-    //     appTitle.style.fontSize = "200px";
-    //     appTitle.style.fontFamily = "'Amatic SC', cursive";
-    // } else {
-    //     appTitle.style.fontFamily = "'Audiowide', 'cursive'";
-    //     cleanUp();
-    // }
 }
 
 const toggleDark = () => {
